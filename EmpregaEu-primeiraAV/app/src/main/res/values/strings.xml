@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Minha fome, nossa fome</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="check">Are you a robot?</string>
+    <string name="login">Login</string>
+    <string name="msgError">Wrong user</string>
+    <string name="first">  Welcome to our app.</string>
+    <string name="firstMessage">Minha fome, nossa fome, was created with the goal of decreasing hunger in the cities, we collect donations and give it to people in need. </string>
+    <string name="terms">Clicking on the button below, you are accepting our terms and conditions.</string>
+    <string name="firstOng"> Welcome, Raysa </string>
+    <string name="secondOng">               (81) 9XXXX-XXXX
+project minha fome, nossa fome</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elite.</string>
+    <string name="donating">Donating to our app, you are also donating to other charities as well.</string>
+    <string name="ongs"> User </string>
+    <string name="btSeeMore">See more</string>
+    <string name="accept">I accept the terms.</string>
+</resources>

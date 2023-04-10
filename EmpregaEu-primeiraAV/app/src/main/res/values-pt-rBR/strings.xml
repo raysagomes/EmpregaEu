@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Minha fome, nossa fome</string>
+    <string name="name">Nome</string>
+    <string name="password">Senha</string>
+    <string name="check">Você é um robô???</string>
+    <string name="login">Login</string>
+    <string name="msgError">Usuário incorreto</string>
+    <string name="first">Seja bem-vindo(a) ao nosso aplicativo.</string>
+    <string name="firstMessage">O minha fome, nossa fome, foi criado com o intuito de diminuir a fome nas cidades sendo um projeto de caridade, no qual juntamos doações e doamos para pessoas em estado de carência. </string>
+    <string name="terms">Clicando no botão abaixo, você está aceitando nossos termos e confições</string>
+    <string name="firstOng">Seja bem vindo(a), Raysa</string>
+    <string name="secondOng">            (81) 9XXXX-XXXX
+ projeto minha fome, nossa fome.</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+    <string name="ongs">Usuário</string>
+    <string name="btSeeMore">Veja mais</string>
+    <string name="donating">Doando para o nosso aplicativo, você está ajudando também outras instituições de caridade.</string>
+    <string name="accept">Eu aceito os termos e condições</string>
+
+</resources>

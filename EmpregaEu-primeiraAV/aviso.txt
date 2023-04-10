@@ -1,0 +1,1 @@
+Segue também um vídeo, de como ficou no meu celular, já que no app do android studio, ficou um pouco diferente. Sim, o arquivo usado como base para o projeto foi o que o professor usou na aula, porém acredito que se o senhor olhar o código tá completamente diferente. Desde já, agradeço.
