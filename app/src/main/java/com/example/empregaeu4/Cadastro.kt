@@ -1,5 +1,6 @@
 package com.example.empregaeu4
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.empregaeu4.databinding.ActivityCadastroBinding
@@ -39,6 +40,9 @@ private lateinit var dbRef: DatabaseReference
             if(CPF.isEmpty()){
                 CPFF.error = "Por favor insira um CPF"
             }
+            if(birthday.isEmpty()){
+                birth.error = "Por favor insira sua data de Nascimento"
+            }
 
             val userId = dbRef.push().key!!
 
@@ -47,7 +51,6 @@ private lateinit var dbRef: DatabaseReference
             dbRef.child(userId).setValue(Usuário)
                 .addOnCompleteListener{
                     Toast.makeText(this, "Cadastro realizado", Toast.LENGTH_SHORT).show()
-
                     usuario.text.clear()
                         phonee.text.clear()
                     CPFF.text.clear()
@@ -56,6 +59,8 @@ private lateinit var dbRef: DatabaseReference
                 }.addOnFailureListener{err ->
                     Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_SHORT).show()
                 }
+            val intent = Intent(this, ListaOngs::class.java)
+            startActivity(intent)
         }
 
 
