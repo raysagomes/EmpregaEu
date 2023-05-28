@@ -9,8 +9,6 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.database.DatabaseReference
 
-
-
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,25 +21,22 @@ class MainActivity : AppCompatActivity() {
         val idSenha = binding.idSenha
         val btSignup = binding.btSignup
 
+        val database = Firebase.database
+        val myRef: DatabaseReference = database.getReference("nomedousuario")
 
         btLogin.setOnClickListener {
 
-            if (idSenha != null) {
                 if(idNome.text.toString() == "Raysa" && idSenha.text.toString().toIntOrNull() == 157) {
                     val intent = Intent(this, Tela2Activity::class.java)
                     val texto = idNome.text.toString()
                     intent.putExtra("nome", texto)
                     startActivity(intent)
-
-                    val database = Firebase.database
-                    val myRef = database.getReference("message")
-
-                    myRef.setValue("Hello, World!")
+                    myRef.setValue(texto)
 
                 } else {
                     Toast.makeText(this, R.string.msgError, Toast.LENGTH_SHORT).show()
+
                 }
-            }
         }
         btSignup?.setOnClickListener {
             val intent = Intent(this, Cadastro::class.java)

@@ -1,1 +1,0 @@
-Aplicativo em desenvolvimento

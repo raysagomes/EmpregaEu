@@ -4,7 +4,7 @@
     <string name="password">Password</string>
     <string name="check">Are you a robot?</string>
     <string name="login">Login</string>
-    <string name="msgError">Wrong user</string>
+    <string name="msgError">Wrong user or inexistent please sign up.</string>
     <string name="first">  Welcome to our app.</string>
     <string name="firstMessage">Minha fome, nossa fome, was created with the goal of decreasing hunger in the cities, we collect donations and give it to people in need. </string>
     <string name="terms">Clicking on the button below, you are accepting our terms and conditions.</string>
@@ -18,5 +18,6 @@ project minha fome, nossa fome</string>
     <string name="accept">I accept the terms.</string>
     <string name="sign" translatable="false">Sign up</string>
     <string name="signn" translatable="false">Sign up</string>
+    <string name="btEntrar" translatable="false">Sign</string>
 
 </resources>

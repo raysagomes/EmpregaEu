@@ -13,7 +13,51 @@ private lateinit var dbRef: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cadastro)
+        binding = ActivityCadastroBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        var usuario = binding.idName
+        var phonee = binding.idPhone
+        var CPFF = binding.CPF
+        var birth = binding.birth
+        var btCadastrar = binding.btEntrar
+
+        dbRef = FirebaseDatabase.getInstance().getReference("Usuário")
+
+        btCadastrar.setOnClickListener{
+            val userName = usuario.text.toString()
+            val phone = phonee.text.toString()
+            val birthday = birth.text.toString()
+            val CPF = CPFF.text.toString()
+
+            if(userName.isEmpty()){
+                usuario.error = "Por favor insira um nome"
+            }
+            if(phone.isEmpty()){
+                phonee.error = "Por favor insira um telefone"
+            }
+            if(CPF.isEmpty()){
+                CPFF.error = "Por favor insira um CPF"
+            }
+
+            val userId = dbRef.push().key!!
+
+            val Usuário = UsuarioDados(userId, userName, phone, CPF, birthday)
+
+            dbRef.child(userId).setValue(Usuário)
+                .addOnCompleteListener{
+                    Toast.makeText(this, "Cadastro realizado", Toast.LENGTH_SHORT).show()
+
+                    usuario.text.clear()
+                        phonee.text.clear()
+                    CPFF.text.clear()
+                    birth.text.clear()
+
+                }.addOnFailureListener{err ->
+                    Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_SHORT).show()
+                }
+        }
+
 
     }
 }
