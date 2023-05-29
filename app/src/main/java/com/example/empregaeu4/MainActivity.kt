@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         btLogin.setOnClickListener {
 
                 if(idNome.text.toString() == "Raysa" && idSenha.text.toString().toIntOrNull() == 157) {
-                    val intent = Intent(this, Tela2Activity::class.java)
+                    val intent = Intent(this, ListaOngs::class.java)
                     val texto = idNome.text.toString()
                     intent.putExtra("nome", texto)
                     startActivity(intent)

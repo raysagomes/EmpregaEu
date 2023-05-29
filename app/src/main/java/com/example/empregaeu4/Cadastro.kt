@@ -7,6 +7,8 @@ import com.example.empregaeu4.databinding.ActivityCadastroBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import android.widget.Toast
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 class Cadastro : AppCompatActivity() {
 private lateinit var binding : ActivityCadastroBinding
@@ -24,6 +26,8 @@ private lateinit var dbRef: DatabaseReference
         var btCadastrar = binding.btEntrar
 
         dbRef = FirebaseDatabase.getInstance().getReference("Usuário")
+        val database = Firebase.database
+        val myRef: DatabaseReference = database.getReference("dadosdousuario")
 
         btCadastrar.setOnClickListener{
             val userName = usuario.text.toString()
@@ -31,17 +35,9 @@ private lateinit var dbRef: DatabaseReference
             val birthday = birth.text.toString()
             val CPF = CPFF.text.toString()
 
-            if(userName.isEmpty()){
-                usuario.error = "Por favor insira um nome"
-            }
-            if(phone.isEmpty()){
-                phonee.error = "Por favor insira um telefone"
-            }
-            if(CPF.isEmpty()){
-                CPFF.error = "Por favor insira um CPF"
-            }
-            if(birthday.isEmpty()){
-                birth.error = "Por favor insira sua data de Nascimento"
+            if(userName.isEmpty() || phone.isEmpty() || birthday.isEmpty() || CPF.isEmpty()){
+                Toast.makeText(this, "Por favor, preencha todos os campos", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
             }
 
             val userId = dbRef.push().key!!
@@ -55,12 +51,15 @@ private lateinit var dbRef: DatabaseReference
                         phonee.text.clear()
                     CPFF.text.clear()
                     birth.text.clear()
+                    myRef.setValue(Usuário)
+                    val userList: ArrayList<UsuarioDados>
+                    val intent = Intent(this, ListaOngs::class.java)
+                    startActivity(intent)
 
                 }.addOnFailureListener{err ->
                     Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_SHORT).show()
                 }
-            val intent = Intent(this, ListaOngs::class.java)
-            startActivity(intent)
+           //
         }
 
 

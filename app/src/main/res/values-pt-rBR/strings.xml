@@ -20,5 +20,7 @@
     <string name="sign" translatable="false">Cadastro</string>
     <string name="signn" translatable="false">Cadastre-se</string>
     <string name="btEntrar" translatable="false" tools:ignore="ExtraTranslation">Cadastrar</string>
+    <string name="greetings" tools:ignore="ExtraTranslation">Olá</string>
+    <string name="Loading" translatable="false" tools:ignore="ExtraTranslation">Carregando... </string>
 
 </resources>

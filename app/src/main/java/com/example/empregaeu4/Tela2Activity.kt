@@ -15,9 +15,10 @@ class Tela2Activity : AppCompatActivity() {
         binding = ActivityTela2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val receivedName = intent.getStringExtra("nome")
         val nextButton = findViewById<Button>(R.id.btNextPage)
         nextButton.setOnClickListener {
-            val intent = Intent(this, NextActivity::class.java)
+            val intent = Intent(this, ListaOngs::class.java)
             startActivity(intent)
 
         }
