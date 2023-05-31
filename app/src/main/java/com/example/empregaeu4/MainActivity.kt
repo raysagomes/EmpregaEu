@@ -27,21 +27,23 @@ class MainActivity : AppCompatActivity() {
         btLogin.setOnClickListener {
 
                 if(idNome.text.toString() == "Raysa" && idSenha.text.toString().toIntOrNull() == 157) {
-                    val intent = Intent(this, ListaOngs::class.java)
+                    val intent = Intent(this, Cadastro::class.java)
                     val texto = idNome.text.toString()
                     intent.putExtra("nome", texto)
                     startActivity(intent)
                     myRef.setValue(texto)
 
                 } else {
-                    Toast.makeText(this, R.string.msgError, Toast.LENGTH_SHORT).show()
+                    val inten = Intent(this, ListaOngs::class.java)
+                    startActivity(inten)
+//                    Toast.makeText(this, R.string.msgError, Toast.LENGTH_SHORT).show()
 
                 }
         }
-        btSignup?.setOnClickListener {
-            val intent = Intent(this, Cadastro::class.java)
-            startActivity(intent)
-        }
+//        btSignup?.setOnClickListener {
+//            val intent = Intent(this, Cadastro::class.java)
+//            startActivity(intent)
+//        }
         //setContentView(R.layout.activity_main)
     }
 }

@@ -11,7 +11,6 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 class Cadastro : AppCompatActivity() {
-    private lateinit var apList: ArrayList<UsuarioDados>
     private lateinit var binding : ActivityCadastroBinding
 private lateinit var dbRef: DatabaseReference
 
@@ -26,7 +25,6 @@ private lateinit var dbRef: DatabaseReference
         var birth = binding.birth
         var btCadastrar = binding.btEntrar
 
-        apList = arrayListOf<UsuarioDados>()
         dbRef = FirebaseDatabase.getInstance().getReference("Usuário")
         val database = Firebase.database
         val myRef: DatabaseReference = database.getReference("dadosdousuario")
@@ -53,12 +51,13 @@ private lateinit var dbRef: DatabaseReference
                         phonee.text.clear()
                     CPFF.text.clear()
                     birth.text.clear()
-                    myRef.setValue(Usuário)
-                    val userList: ArrayList<UsuarioDados>
-                    apList.add(Usuário)
-//                    val intent = Intent(this, ListaOngs::class.java)
+//                    myRef.setValue(Usuário)
+//                    val userList: ArrayList<UsuarioDados>
+//                    apList.add(Usuário)
+
+                    val intent = Intent(this, ListaOngs::class.java)
 //                    intent.putExtra("apList", apList)
-//                    startActivity(intent)
+                   startActivity(intent)
 
                 }.addOnFailureListener{err ->
                     Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_SHORT).show()
